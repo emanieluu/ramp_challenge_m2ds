@@ -7,6 +7,23 @@ from sklearn.utils import shuffle
 
 problem_title = 'Spotify Popularity Prediction'
 
+features = [
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "duration_ms",
+    "playlist_genre",
+    "playlist_subgenre",
+]
+
 _target_column_name = 'track_popularity'
 
 Predictions = rw.prediction_types.make_regression()
@@ -26,9 +43,9 @@ def get_test_data(path='.'):
     return _read_data(path, f_name)
 
 def _read_data(path, f_name):
-    data = pd.read_csv(os.path.join(path, 'data', f_name))
+    data = pd.read_csv(os.path.join(path, "data", f_name))
     y_array = data[_target_column_name].values
-    X_array = data.drop([_target_column_name], axis=1).values
+    X_array = data[features].values
     return X_array, y_array
 
 def get_cv(X, y):
