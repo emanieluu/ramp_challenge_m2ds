@@ -31,7 +31,7 @@ workflow = rw.workflows.Regressor()
 
 score_types = [
     rw.score_types.RMSE(name='rmse'),
-    rw.score_types.MARE(name='mare'),
+    #rw.score_types.MARE(name='mare'),
 ]
 
 def get_train_data(path='.'):
