@@ -39,6 +39,8 @@ You can get more information regarding this command line:
 ramp-test --help
 ```
 
+We provide an example of submission in the [starting_kit file](submissions/starting_kit/regressor.py)
+
 ### To go further
 
 You can find more information regarding `ramp-workflow` in the
